@@ -1,0 +1,31 @@
+{
+  "grammars": [
+    {
+      "name": "wgsl",
+      "camelcase": "Wgsl",
+      "scope": "source.wgsl",
+      "path": ".",
+      "file-types": [
+        "wgsl"
+      ],
+      "highlights": "queries/highlights.scm",
+      "injection-regex": "^wgsl$"
+    }
+  ],
+  "metadata": {
+    "version": "0.0.7",
+    "license": "BSD-3-Clause",
+    "description": "WGSL grammar for tree-sitter",
+    "links": {
+      "repository": "https://github.com/gpuweb/tree-sitter-wgsl"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}

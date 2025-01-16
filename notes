@@ -1,0 +1,55 @@
+installed tree-sitter via "npm install -g tree-sitter-cli"
+pasted grammar folder from the gpuweb_cloned fodler into test (this) folder
+cd into grammar folder
+run "tree-sitter generate"
+
+
+install node-gyp to compile c code into a .node module
+node-gyp configure
+node-gyp build
+
+create new node.js project (ast folder)
+find \grammar\build\Release\tree_sitter_wgsl_binding.node and then link to it in parse.js 
+
+THIS WORKS TO GENERATE AN AST  
+
+
+ok now time to convert this to a next.js thing that can run on web
+
+tried to use a precompiled webassemble (WASM) module
+cd into grammar folder
+(had to add docker to path at some point, it requires docker to run)
+(must have docker OPEN for this command to work)
+"tree-sitter build --wasm --docker"
+then the tree-sitter-wgsl.wasm file is generated hehehehhee
+
+
+
+nvm that shit didnt work
+
+giong back to using .node binary
+
+npx create-next-app wgsl-parser
+yes typescript
+yes eslint
+yes tailwind css
+yes code inside src/ directory
+yes app router
+no turbopack
+no customize import alias
+
+app created
+
+cd into wgsl-parser
+npm install tree-sitter
+
+create a new api route for the ast generation backend
+folder must be "api" 
+and the file defining the route must be "route.js"
+so created those in the app directory
+app/api/ast/route.js
+route.js here defines the /api/ast endpoint
+
+nvm next.js lmfao webpack was fucking me over
+
+ doing react frontend and node.js backend so it WORKS
